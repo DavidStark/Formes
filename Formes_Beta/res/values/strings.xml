@@ -1,0 +1,284 @@
+<!--
+  Copyright 2013 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Rapid Appraisal (Slum Level Data)</string>
+
+    <string-array name="planets_array">
+        <item>Administration</item>
+        <item>General</item>
+        <item>Toilet</item>
+        <item>Water</item>
+        <item>Waste Management</item>
+        <item>Storm Water Drain</item>
+        <item>Drainage</item>
+        <item>Road and Access</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+    <string-array name="legal_status">
+        <item>Declared</item>
+        <item>Undeclared</item>
+        <item>Partly Declared</item>
+    </string-array>
+    <string-array name="SRAZone">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
+    <string-array name="landOwner">
+        <item>Private</item>
+        <item>Central Government</item>
+        <item>State Government</item>
+        <item>Local Government(PMC)</item>
+        <item>Not Known</item>
+    </string-array>
+    <string-array name="reservations">
+        <item>Road Widening</item>
+        <item>Open Space / Garden / Green Belt / BDP</item>
+        <item>School</item>
+        <item>Hospital</item>
+        <item>Library</item>
+    </string-array>
+    <string-array name="planLandUse">
+        <item>Residential (yellow)</item>
+        <item>Commercial (skyblue)</item>
+        <item>Industrial (purple)</item>
+        <item>Public -Semi Public (pink)</item>
+        <item>Public Utility (??)</item>
+        <item>Recreational/Open Space (green)</item>
+        <item>Agricultural (Net green))</item>
+        <item>River/Water body ( blue)</item>
+    </string-array>
+    <string-array name="noOfHuts">
+        <item>Less than 150</item>
+        <item>150-300</item>
+        <item>300-500</item>
+        <item>500-1000</item>
+        <item>1000+</item>
+    </string-array>
+    <string-array name="location">
+        <item>Water body / river bed / canal</item>
+        <item>Hill slope</item>
+        <item>Main road</item>
+        <item>Railway line</item>
+        <item>Within 1km of an airport</item>
+        <item>Isolated</item>
+    </string-array>
+    <string-array name="topography">
+        <item>Acute</item>
+        <item>Reasonable</item>
+        <item>Slight</item>
+        <item>Flat</item>
+        <item>Within 1km of an airport</item>
+        <item>Isolated</item>
+    </string-array>
+    <string-array name="strategyToiletBlocks">
+        <item>Not Applicable</item>
+        <item>Open defecation</item>
+        <item>Public toilets outside of the settlement</item>
+        <item>Group toilet</item>
+        <item>Individual toilet</item>
+    </string-array>
+    <string-array name="toiletGenderUsage">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Mixed</item>
+    </string-array>
+    <string-array name="reasonNotUsage">
+        <item>Not Applicable</item>
+        <item>Choked</item>
+        <item>Broken pan</item>
+        <item>Broken door</item>
+        <item>No water</item>
+        <item>No electricity</item>
+        <item>Poor up-keep</item>
+        <item>Construction</item>
+    </string-array>
+    <string-array name="blockMaintenance">
+        <item>Not Applicable</item>
+        <item>PMC</item>
+        <item>NGO</item>
+        <item>Community</item>
+    </string-array>
+    <string-array name="conditionBlock">
+        <item>Not Applicable</item>
+        <item>Poor</item>
+        <item>Average</item>
+        <item>Good</item>
+    </string-array>
+    <string-array name="cleanlinessToilet">
+        <item>Not Applicable</item>
+        <item>Poor</item>
+        <item>Average</item>
+        <item>Good</item>
+    </string-array>
+    <string-array name="isCaretaker">
+        <item>No</item>
+        <item>Yes (partime)</item>
+        <item>Yes (fulltime)</item>
+    </string-array>
+    <string-array name="waterSupply">
+        <item>Not Applicable</item>
+        <item>Carry from home</item>
+        <item>Water tank</item>
+        <item>Piped supply</item>
+    </string-array>
+    <string-array name="capacityTank">
+        <item>1,000-5,000</item>
+        <item>5,000-10,000</item>
+        <item>10,000-20,000</item>
+        <item>20,000+</item>
+    </string-array>
+    <string-array name="perHeadWaterUse">
+        <item>Not Applicable</item>
+        <item>Less than 2 litres</item>
+        <item>2-3 litres</item>
+        <item>More than 3 litres</item>
+    </string-array>
+    <string-array name="waterAvailability">
+        <item>Less than 2 hours</item>
+        <item>2-6 hours</item>
+        <item>6-12 hours</item>
+        <item>24/7</item>
+    </string-array>
+    <string-array name="electricityAvailability">
+        <item>Not Applicable</item>
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+    <string-array name="sewageDisposal">
+        <item>Not Applicable</item>
+        <item>Septic tank</item>
+        <item>PMC sewer line</item>
+    </string-array>
+    <string-array name="distanceToPMC">
+        <item>Over 0.5 km from the edge of the settlement</item>
+        <item>On the edge of the settlement</item>
+        <item>Within the settlement</item>
+    </string-array>
+    <string-array name="coverageOfPMCSewer">
+        <item>No Coverage</item>
+        <item>Partial Coverage</item>
+        <item>Full Coverage</item>
+    </string-array>
+    <string-array name="capacityOfPMCSewer">
+        <item>Six inch (6”) diameter</item>
+        <item>Ten inch (10”) diameter</item>
+        <item>Twelve inch (12”) diameter</item>
+        <item>Eighteen inches (18”) diameter</item>
+    </string-array>
+    <string-array name="percentileIndividualToilet">
+        <item>Less than 10%</item>
+        <item>10%-40%</item>
+        <item>40%-60%</item>
+        <item>Over 60%</item>
+    </string-array>
+    <string-array name="percentileIndividualWater">
+        <item>Less than 10%</item>
+        <item>10%-39%</item>
+        <item>40%-79%</item>
+        <item>80%-99%</item>
+        <item>100%</item>
+    </string-array>
+    <string-array name="alternativeWaterSource">
+        <item>None</item>
+        <item>Canal / water body</item>
+        <item>Bore well</item>
+        <item>Tanker</item>
+        <item>Group water connection</item>
+        <item>Buy from neighbours</item>
+    </string-array>
+    <string-array name="availabilityWater">
+        <item>Less than 2 hours</item>
+        <item>2-6 hours</item>
+        <item>6-12 hours</item>
+        <item>24/7</item>
+    </string-array>
+    <string-array name="pressureOfWater">
+        <item>Less than 2 hours</item>
+        <item>2-6 hours</item>
+        <item>6-12 hours</item>
+        <item>24/7</item>
+    </string-array>
+    <string-array name="frequencyWasteClearance">
+        <item>Not Applicable</item>
+        <item>Less than twice a week</item>
+        <item>Twice a week</item>
+        <item>Alternate days</item>
+        <item>Daily</item>
+    </string-array>
+    <string-array name="methodOfCollection">
+        <item>No provision</item>
+        <item>Tempo</item>
+        <item>Rag pickers association</item>
+        <item>PMC Ghantagadi</item>
+    </string-array>
+    <string-array name="dumpSites">
+        <item>Within the settlement</item>
+        <item>In a nearby canal/water body</item>
+        <item>On the edge of settlement</item>
+        <item>Over 0.5 km from the edge of the settlement</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="drainTypes">
+        <item>Not Applicable</item>
+        <item>Kutcha</item>
+        <item>Kutcha and pucca</item>
+        <item>Pucca</item>
+    </string-array>
+    <string-array name="positionOfDrains">
+        <item>Not Applicable</item>
+        <item>Over-ground</item>
+        <item>Over-ground and under-ground</item>
+        <item>Under-ground</item>
+    </string-array>
+    <string-array name="finishOfRoads">
+        <item>No Roads</item>
+        <item>Mud</item>
+        <item>Tiles (shahabadifurshi)</item>
+        <item>Paving blocks</item>
+        <item>Concrete</item>
+        <item>Tar</item>
+    </string-array>
+    <string-array name="widthOfRoads">
+        <item>Less than 1.5m</item>
+        <item>1.5m-2m</item>
+        <item>more than 2m</item>
+    </string-array>
+    <string-array name="avgWidthArterialRoads">
+        <item>Less than 3m</item>
+        <item>3m-4.5m</item>
+        <item>more than 4.5m</item>
+    </string-array>
+    <string-array name="pointsOfVehicularAccess">
+        <item>None</item>
+        <item>One</item>
+        <item>More than one</item>
+    </string-array>
+    <string-array name="settlementBelowOrAbove">
+        <item>Above</item>
+        <item>Above and Below</item>
+        <item>Below</item>
+        <item>Same Level</item>
+    </string-array>
+
+</resources>
