@@ -49,6 +49,8 @@ public class ProcessJSON {
 				String mobile = phone.getString(TAG_PHONE_MOBILE);
 				String home = phone.getString(TAG_PHONE_HOME);
 				String office = phone.getString(TAG_PHONE_OFFICE);
+				System.out.println("id:::" + id);
+				System.out.println("name:::" + name);
 
 			}
 		} catch (JSONException e) {
