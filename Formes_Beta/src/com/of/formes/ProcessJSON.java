@@ -44,14 +44,14 @@ public class ProcessJSON {
 				String address = c.getString(TAG_ADDRESS);
 				String gender = c.getString(TAG_GENDER);
 
-				// Phone number is agin JSON Object
+				// Phone number is again JSON Object
 				JSONObject phone = c.getJSONObject(TAG_PHONE);
 				String mobile = phone.getString(TAG_PHONE_MOBILE);
 				String home = phone.getString(TAG_PHONE_HOME);
 				String office = phone.getString(TAG_PHONE_OFFICE);
 				System.out.println("id:::" + id);
 				System.out.println("name:::" + name);
-
+				
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();

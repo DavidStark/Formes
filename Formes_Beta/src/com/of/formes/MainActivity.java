@@ -16,11 +16,15 @@
 
 package com.of.formes;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -51,6 +55,18 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Reading file
+		AssetManager assetManager = getAssets();
+		try {
+			InputStream is = assetManager.open("dummy.json");
+			ReadJSON readJSON = new ReadJSON(is);
+			Survey survey = readJSON.getSurveyObject();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
 		setContentView(R.layout.parent_fragment);
 
 		mTitle = mDrawerTitle = getTitle();

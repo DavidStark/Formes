@@ -1,6 +1,7 @@
 package com.of.formes;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -25,6 +26,35 @@ public class JSONParser {
 	// constructor
 	public JSONParser() {
 
+	}
+
+	public JSONObject getJSONFromFile(InputStream is2) {
+		BufferedReader reader = null;
+
+		try {
+
+			reader = new BufferedReader(
+					new InputStreamReader(is2, "iso-8859-1"), 8);
+
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				sb.append(line + "\n");
+			}
+			reader.close();
+			json = sb.toString();
+		} catch (IOException io) {
+			io.printStackTrace();
+		}
+		// try parse the string to a JSON object
+		try {
+			jObj = new JSONObject(json);
+		} catch (JSONException e) {
+			Log.e("JSON Parser", "Error parsing data " + e.toString());
+		}
+
+		// return JSON String
+		return jObj;
 	}
 
 	public JSONObject getJSONFromUrl(String url) {

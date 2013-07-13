@@ -1,0 +1,333 @@
+{
+    "surveyName": "Rapid Appraisal Survey",
+    "sections": [
+       {
+            "id": 2,
+            "name": "General Information",
+            "branches": [
+                {
+                    "expandable": false,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "text": "State",
+                            "type": "SmallFree",
+                            "readOnly": true,
+                            "default": "27"
+                        },
+                        {
+                            "id": 2,
+                            "text": "District",
+                            "type": "SmallFree",
+                            "readOnly": true,
+                            "default": "25"
+                        },
+                        {
+                            "id": 3,
+                            "text": "City",
+                            "type": "SmallFree",
+                            "minLength": 4,
+                            "maxLength": 4
+                        },
+                        {
+                            "id": 4,
+                            "text": "Electoral",
+                            "type": "SmallFree",
+                            "minLength": 2,
+                            "maxLength": 2
+                        },
+                        {
+                            "id": 5,
+                            "text": "Slum",
+                            "type": "SmallFree",
+                            "minLength": 2,
+                            "maxLength": 2
+                        },
+                        {
+                            "id": 5,
+                            "text": "HouseHold",
+                            "type": "SmallFree",
+                            "readOnly": true,
+                            "default": "N/A"
+                        },
+                        {
+                            "id": 6,
+                            "text": "Survey #:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 7,
+                            "text": "Slum Name:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 8,
+                            "text": "Administrative Ward #:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 9,
+                            "text": "Administrative Ward Name:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 10,
+                            "text": "Electoral Ward #:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 11,
+                            "text": "Electoral Ward Name:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 12,
+                            "text": "Landmark:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 13,
+                            "text": "PMC SRA Zone:",
+                            "type": "Dropdown",
+                            "choices": {
+                                "01": "A",
+                                "02": "B",
+                                "03": "C",
+                                "04": "D"
+                            }
+                        },
+                        {
+                            "id": 14,
+                            "text": "Ration Ward #",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 15,
+                            "text": "Ration Ward Name:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 16,
+                            "text": "Year established according to the community:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 17,
+                            "text": "Year established according to The Pune Municipal Corporation(PMC):",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 18,
+                            "text": "Legal Status:",
+                            "type": "Dropdown",
+                            "choices": {
+                                "01": "Undeclared",
+                                "02": "Partly Declared",
+                                "03": "Declared"
+                            }
+                        },
+                        {
+                            "id": 19,
+                            "text": "Date of declaration:",
+                            "type": "Date"
+                        },
+                        {
+                            "id": 20,
+                            "text": "Land Owner:",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Private",
+                                "02": "Central Government",
+                                "03": "State Government",
+                                "04": "Local Government(PMC)"
+                            }
+                        },
+                        {
+                            "id": 21,
+                            "text": "Development Plan Reservations:",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Road Widening",
+                                "02": "Open Space/Garden/Green Belt/BDP",
+                                "03": "School",
+                                "04": "Hospital",
+                                "05": "Library",
+                                "06": "Economically Weaker Section",
+                                "07": "No reservation"
+                            }
+                        },
+                        {
+                            "id": 22,
+                            "text": "Development Plan Land Use:",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Residential",
+                                "02": "Commercial",
+                                "03": "Industrial",
+                                "04": "Public- Semi Public",
+                                "05": "Public Utility",
+                                "06": "Recreational/Open Space",
+                                "07": "Agricultural",
+                                "08": "River/Water body"
+                            }
+                        },
+                        {
+                            "id": 23,
+                            "text": "Approxomite are of the settlement in square meters:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 24,
+                            "text": "Approxomate number of huts in the settlement",
+                            "type": "Dropdown",
+                            "choices": {
+                                "01": "Less than 150",
+                                "02": "150-300",
+                                "03": "300-500",
+                                "04": "500-1000",
+                                "05": "1000+"
+                            }
+                        },
+                        {
+                            "id": 25,
+                            "text": "Location",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Water body/river bed/canal",
+                                "02": "Hill slope",
+                                "03": "Main road",
+                                "04": "Railway line",
+                                "05": "Within 1kn of an airport",
+                                "06": "Isolated"
+                            }
+                        },
+                        {
+                            "id": 26,
+                            "text": "Topography",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Acute",
+                                "02": "Reasonable",
+                                "03": "Slight",
+                                "04": "Flat"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Toilet Information",
+            "branches": [
+                {
+                    "expandable": false,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "text": "Number of community toilet blocks:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Number of 'Pay & Use' community toilet blocks:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Strategy in addition to community toilet blocks",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Not applicable",
+                                "02": "Open Defecation",
+                                "03": "Public toilets outside of the settlement",
+                                "04": "Group Toilet",
+                                "05": "Individual Toilet"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "expandable": true,
+                    "questions": [
+                        {
+                            "id": 4,
+                            "text": "Community toilet cost(per month, in rupees)",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 5,
+                            "text": "Cost of 'Pay&Use' toilets (per individual use, in rupees)",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 6,
+                            "text": "Cost of 'Pay&Use' toilets (per family per month, in rupees)",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 7,
+                            "text": "Toilet blocks gender usage",
+                            "type": "Dropdown",
+                            "choices": {
+                                "01": "Male",
+                                "02": "Female",
+                                "03": "Mixed"
+                            }
+                        },
+                        {
+                            "id": 8,
+                            "text": "Number of seats used by men",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 9,
+                            "text": "Number of seats NOT used by men",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 10,
+                            "text": "The reason for the men not using the seats",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Not Applicable",
+                                "02": "Choked",
+                                "03": "Broken Pan",
+                                "04": "Broken Door",
+                                "05": "No Water",
+                                "06": "No electricity",
+                                "07": "Poor up-keep",
+                                "08": "Construction"
+                            }
+                        },
+                        {
+                            "id": 11,
+                            "text": "Number of seats used by women",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 12,
+                            "text": "Number of seats NOT used by women",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 13,
+                            "text": "The reason for the women not using the seats",
+                            "type": "Tickbox",
+                            "choices": {
+                                "01": "Not Applicable",
+                                "02": "Choked",
+                                "03": "Broken Pan",
+                                "04": "Broken Door",
+                                "05": "No Water",
+                                "06": "No electricity",
+                                "07": "Poor up-keep",
+                                "08": "Construction"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

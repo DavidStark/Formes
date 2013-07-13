@@ -31,11 +31,6 @@
             android:name="com.of.formes.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.of.formes.ListActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

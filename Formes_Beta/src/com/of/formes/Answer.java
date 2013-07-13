@@ -1,19 +1,18 @@
 package com.of.formes;
 
 public class Answer {
-	Integer minLenght, maxLength;
+	Integer minLength, maxLength;
 	AnswerType type;
-	String text, defaultValue;
+	String defaultValue;
 	Boolean readonly;
 	Integer answerId;
 
-	public Answer(Integer minLenght, Integer maxLength, AnswerType type,
-			String text, String defaultValue, Boolean readonly, Integer answerId) {
+	public Answer(Integer minLenght, Integer maxLength, String type,
+			String defaultValue, Boolean readonly, Integer answerId) {
 
-		this.minLenght = minLenght;
+		this.minLength = minLenght;
 		this.maxLength = maxLength;
-		this.type = type;
-		this.text = text;
+		this.type = AnswerType.valueOf(type);
 		this.defaultValue = defaultValue;
 		this.readonly = readonly;
 		this.answerId = answerId;

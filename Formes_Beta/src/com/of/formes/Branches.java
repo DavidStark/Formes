@@ -7,8 +7,12 @@ public class Branches {
 	ArrayList<Question> questionList;
 	ArrayList<Answer> answerList;
 
-	public Branches() {
-		questionList = new ArrayList<Question>();
-		answerList = new ArrayList<Answer>();
+	public Branches(Boolean isExpandable, ArrayList<Question> questionList,
+			ArrayList<Answer> answerList) {
+
+		this.isExpandable = isExpandable;
+		this.questionList = questionList;
+		this.answerList = answerList;
 	}
+
 }
