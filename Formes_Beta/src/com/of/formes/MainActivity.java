@@ -50,38 +50,49 @@ public class MainActivity extends Activity {
 
 	private CharSequence mDrawerTitle;
 	private CharSequence mTitle;
-	private String[] mPlanetTitles;
+	private String[] mSidePanelList;
+	private Survey survey = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// Reading file
+		// Reading JSON file
 		AssetManager assetManager = getAssets();
 		try {
 			InputStream is = assetManager.open("dummy.json");
 			ReadJSON readJSON = new ReadJSON(is);
-			Survey survey = readJSON.getSurveyObject();
+			survey = readJSON.getSurveyObject();
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
 
-		setContentView(R.layout.parent_fragment);
+		/*
+		 * Checking if we have read JSON file successfully If File read was
+		 * success Assigning Parameters
+		 */
+		if (survey != null) {
+			setContentView(R.layout.parent_fragment);
+			mSidePanelList = survey.GetSectionNames();
+			setTitle(survey.getSurveyName());
+			mTitle = mDrawerTitle = getTitle();
+			mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+			mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-		mTitle = mDrawerTitle = getTitle();
-		mPlanetTitles = getResources().getStringArray(R.array.planets_array);
-		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerList = (ListView) findViewById(R.id.left_drawer);
+			// set a custom shadow that overlays the main content when the
+			// drawer opens
+			mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
+					GravityCompat.START);
 
-		// set a custom shadow that overlays the main content when the drawer
-		// opens
-		mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
-				GravityCompat.START);
-		// set up the drawer's list view with items and click listener
-		mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-				R.layout.drawer_list_item, mPlanetTitles));
-		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+			// set up the drawer's list view with items and click listener
+			mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+					R.layout.drawer_list_item, mSidePanelList));
+			mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+		}
+
+		// mSidePanelList =
+		// getResources().getStringArray(R.array.planets_array);
 
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -171,7 +182,7 @@ public class MainActivity extends Activity {
 		// update the main content by replacing fragments
 		Fragment fragment = new PlanetFragment();
 		Bundle args = new Bundle();
-		args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+		args.putInt(PlanetFragment.ARG_SECTION_NUMBER, position);
 		fragment.setArguments(args);
 
 		FragmentManager fragmentManager = getFragmentManager();
@@ -181,7 +192,7 @@ public class MainActivity extends Activity {
 
 		// update selected item and title, then close the drawer
 		mDrawerList.setItemChecked(position, true);
-		setTitle(mPlanetTitles[position]);
+		setTitle(mSidePanelList[position]);
 		mDrawerLayout.closeDrawer(mDrawerList);
 	}
 
@@ -214,7 +225,7 @@ public class MainActivity extends Activity {
 	 * Fragment that appears in the "content_frame", shows a planet
 	 */
 	public static class PlanetFragment extends Fragment {
-		public static final String ARG_PLANET_NUMBER = "planet_number";
+		public static final String ARG_SECTION_NUMBER = "planet_number";
 
 		public PlanetFragment() {
 			// Empty constructor required for fragment subclasses
@@ -225,9 +236,8 @@ public class MainActivity extends Activity {
 				Bundle savedInstanceState) {
 			View rootView = null;
 
-			int i = getArguments().getInt(ARG_PLANET_NUMBER);
-			String planet = getResources()
-					.getStringArray(R.array.planets_array)[i];
+			int i = getArguments().getInt(ARG_SECTION_NUMBER);
+//			String planet = getResources().getStringArray(R.array.planets_array)[i];
 
 			switch (i) {
 			case 0:

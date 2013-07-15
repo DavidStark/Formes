@@ -1,7 +1,38 @@
 {
     "surveyName": "Rapid Appraisal Survey",
     "sections": [
-       {
+        {
+            "id": 1,
+            "name": "Administration",
+            "branches": [
+                {
+                    "expandable": false,
+                    "questions": [
+                        {
+                            "id": 1,
+                            "text": "Date of Survey",
+                            "type": "Date"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Name of Surveyor(s) who checked the map:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Name of Surveyor(s) who collected the data:",
+                            "type": "SmallFree"
+                        },
+                        {
+                            "id": 4,
+                            "text": "Name of Surveyor(s) who took the photograps:",
+                            "type": "SmallFree"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": 2,
             "name": "General Information",
             "branches": [

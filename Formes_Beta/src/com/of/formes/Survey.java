@@ -1,6 +1,7 @@
 package com.of.formes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Survey {
 	String surveyName;
@@ -12,4 +13,20 @@ public class Survey {
 		this.sectionList = sectionList;
 	}
 
+	public String[] GetSectionNames() {
+
+		int size = sectionList.size();
+		String[] sectionName = new String[size];
+
+		for (int i = 0; i < size; i++) {
+			sectionName[i] = sectionList.get(i).name;
+		}
+
+		return sectionName;
+
+	}
+
+	public CharSequence getSurveyName() {
+		return surveyName;
+	}
 }
