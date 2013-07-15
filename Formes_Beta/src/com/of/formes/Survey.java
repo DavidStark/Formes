@@ -29,4 +29,9 @@ public class Survey {
 	public CharSequence getSurveyName() {
 		return surveyName;
 	}
+
+	public String getSectionName(int i) {
+		
+		return sectionList.get(i).name;
+	}
 }

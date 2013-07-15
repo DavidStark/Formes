@@ -18,7 +18,7 @@ package com.of.formes;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -40,9 +40,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.example.android.navigationdrawerexample.R;
 
+@SuppressLint("ValidFragment")
 public class MainActivity extends Activity {
 	private DrawerLayout mDrawerLayout;
 	private ListView mDrawerList;
@@ -180,9 +180,9 @@ public class MainActivity extends Activity {
 
 	private void selectItem(int position) {
 		// update the main content by replacing fragments
-		Fragment fragment = new PlanetFragment();
+		Fragment fragment = new SectionFragment();
 		Bundle args = new Bundle();
-		args.putInt(PlanetFragment.ARG_SECTION_NUMBER, position);
+		args.putInt(SectionFragment.ARG_SECTION_NUMBER, position);
 		fragment.setArguments(args);
 
 		FragmentManager fragmentManager = getFragmentManager();
@@ -224,67 +224,94 @@ public class MainActivity extends Activity {
 	/**
 	 * Fragment that appears in the "content_frame", shows a planet
 	 */
-	public static class PlanetFragment extends Fragment {
+	public class SectionFragment extends Fragment {
 		public static final String ARG_SECTION_NUMBER = "planet_number";
 
-		public PlanetFragment() {
+		public SectionFragment() {
 			// Empty constructor required for fragment subclasses
 		}
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = null;
+			View view = inflater.inflate(R.layout.fragment_basic, container,
+					false);
 
-			int i = getArguments().getInt(ARG_SECTION_NUMBER);
-//			String planet = getResources().getStringArray(R.array.planets_array)[i];
+			// now you must initialize your list view
+			ListView listview = (ListView) view
+					.findViewById(R.id.your_list_view);
 
-			switch (i) {
-			case 0:
-				rootView = inflater.inflate(R.layout.fragment_admin, container,
-						false);
-				getActivity().setTitle(planet);
+			// EDITED Code
+			String[] items = new String[] { "Item 1", "Item 2", "Item 3" };
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+					getActivity(), android.R.layout.simple_list_item_1, items);
 
-				break;
-			case 1:
-				rootView = inflater.inflate(R.layout.fragment_geninfo,
-						container, false);
-				getActivity().setTitle(planet);
+			listview.setAdapter(adapter);
 
-				break;
-			case 2:
-				rootView = inflater.inflate(R.layout.fragment_toilet,
-						container, false);
-				getActivity().setTitle(planet);
-				break;
-			case 3:
-				rootView = inflater.inflate(R.layout.fragment_water, container,
-						false);
-				getActivity().setTitle(planet);
-				break;
-			case 4:
-				rootView = inflater.inflate(R.layout.fragment_waste, container,
-						false);
-				getActivity().setTitle(planet);
-				break;
-			case 5:
-				rootView = inflater.inflate(R.layout.fragment_storm, container,
-						false);
-				getActivity().setTitle(planet);
-				break;
-			case 6:
-				rootView = inflater.inflate(R.layout.fragment_drainage,
-						container, false);
-				getActivity().setTitle(planet);
-				break;
-			case 7:
-				rootView = inflater.inflate(R.layout.fragment_road, container,
-						false);
-				getActivity().setTitle(planet);
-				break;
-			}
+			// To have custom list view use this : you must define
+			// CustomeAdapter class
+			// listview.setadapter(new CustomeAdapter(getActivity()));
+			// getActivty is used instead of Context
+			return view;
 
-			return rootView;
 		}
+
+		// @Override
+		// public View onCreateView(LayoutInflater inflater, ViewGroup
+		// container,
+		// Bundle savedInstanceState) {
+		// View rootView = null;
+		//
+		// int i = getArguments().getInt(ARG_SECTION_NUMBER);
+		// String section = survey.getSectionName(i);
+		//
+		// switch (i) {
+		// case 0:
+		//
+		// rootView = inflater.inflate(R.layout.fragment_admin, container,
+		// false);
+		// getActivity().setTitle(section);
+		//
+		// break;
+		// case 1:
+		// rootView = inflater.inflate(R.layout.fragment_geninfo,
+		// container, false);
+		// getActivity().setTitle(section);
+		//
+		// break;
+		// case 2:
+		// rootView = inflater.inflate(R.layout.fragment_toilet,
+		// container, false);
+		// getActivity().setTitle(section);
+		// break;
+		// case 3:
+		// rootView = inflater.inflate(R.layout.fragment_water, container,
+		// false);
+		// getActivity().setTitle(section);
+		// break;
+		// case 4:
+		// rootView = inflater.inflate(R.layout.fragment_waste, container,
+		// false);
+		// getActivity().setTitle(section);
+		// break;
+		// case 5:
+		// rootView = inflater.inflate(R.layout.fragment_storm, container,
+		// false);
+		// getActivity().setTitle(section);
+		// break;
+		// case 6:
+		// rootView = inflater.inflate(R.layout.fragment_drainage,
+		// container, false);
+		// getActivity().setTitle(section);
+		// break;
+		// case 7:
+		// rootView = inflater.inflate(R.layout.fragment_road, container,
+		// false);
+		// getActivity().setTitle(section);
+		// break;
+		// }
+		//
+		// return rootView;
+		// }
 	}
 }
