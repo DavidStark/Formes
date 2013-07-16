@@ -15,4 +15,9 @@ public class Branches {
 		this.answerList = answerList;
 	}
 
+	public int getNoOfQuestions() {
+		// TODO Auto-generated method stub
+		return questionList.size();
+	}
+
 }

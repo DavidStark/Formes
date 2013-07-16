@@ -10,12 +10,14 @@ public class RowLayoutUI {
 
 	}
 
-	public RowLayoutUI(String answerOptions, String questionText,
-			String answerType) {
+	public RowLayoutUI(Answer answer, Question question,
+			AnswerType answerType) {
 		super();
-		this.answerOptions = answerOptions;
-		this.questionText = questionText;
-		this.answerType = AnswerType.valueOf(answerType);
+		this.answerOptions = answer;
+		this.questionText = question;
+		this.answerType = (answerType);
 	}
+	
+	
 
 }
