@@ -238,13 +238,29 @@ public class MainActivity extends Activity {
 					false);
 
 			// now you must initialize your list view
-			ListView listview = (ListView) view
-					.findViewById(R.id.your_list_view);
+			ListView listview = (ListView) view.findViewById(R.id.baseListView);
 
 			// EDITED Code
 			String[] items = new String[] { "Item 1", "Item 2", "Item 3" };
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-					getActivity(), android.R.layout.simple_list_item_1, items);
+			/*
+			 * Weather weather_data[] = new Weather[] { new
+			 * Weather(R.drawable.weather_cloudy, "Cloudy"), new
+			 * Weather(R.drawable.weather_showers, "Showers"), new
+			 * Weather(R.drawable.weather_snow, "Snow"), new
+			 * Weather(R.drawable.weather_storm, "Storm"), new
+			 * Weather(R.drawable.weather_sunny, "Sunny") };
+			 */
+
+			RowLayoutUI rowLayout[] = new RowLayoutUI[] {
+					new RowLayoutUI("a", "first question", "smallFree"),
+					new RowLayoutUI("b", "second question", "smallFree"),
+					new RowLayoutUI("b", "third question", "smallFree") };
+
+			// ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+			// getActivity(), android.R.layout.simple_list_item_1, items);
+
+			RowLayoutUIAdapter adapter = new RowLayoutUIAdapter(getActivity(),
+					R.layout.fragment_row, rowLayout);
 
 			listview.setAdapter(adapter);
 
@@ -256,62 +272,5 @@ public class MainActivity extends Activity {
 
 		}
 
-		// @Override
-		// public View onCreateView(LayoutInflater inflater, ViewGroup
-		// container,
-		// Bundle savedInstanceState) {
-		// View rootView = null;
-		//
-		// int i = getArguments().getInt(ARG_SECTION_NUMBER);
-		// String section = survey.getSectionName(i);
-		//
-		// switch (i) {
-		// case 0:
-		//
-		// rootView = inflater.inflate(R.layout.fragment_admin, container,
-		// false);
-		// getActivity().setTitle(section);
-		//
-		// break;
-		// case 1:
-		// rootView = inflater.inflate(R.layout.fragment_geninfo,
-		// container, false);
-		// getActivity().setTitle(section);
-		//
-		// break;
-		// case 2:
-		// rootView = inflater.inflate(R.layout.fragment_toilet,
-		// container, false);
-		// getActivity().setTitle(section);
-		// break;
-		// case 3:
-		// rootView = inflater.inflate(R.layout.fragment_water, container,
-		// false);
-		// getActivity().setTitle(section);
-		// break;
-		// case 4:
-		// rootView = inflater.inflate(R.layout.fragment_waste, container,
-		// false);
-		// getActivity().setTitle(section);
-		// break;
-		// case 5:
-		// rootView = inflater.inflate(R.layout.fragment_storm, container,
-		// false);
-		// getActivity().setTitle(section);
-		// break;
-		// case 6:
-		// rootView = inflater.inflate(R.layout.fragment_drainage,
-		// container, false);
-		// getActivity().setTitle(section);
-		// break;
-		// case 7:
-		// rootView = inflater.inflate(R.layout.fragment_road, container,
-		// false);
-		// getActivity().setTitle(section);
-		// break;
-		// }
-		//
-		// return rootView;
-		// }
 	}
 }
