@@ -242,6 +242,7 @@ public class MainActivity extends Activity {
 
 			// EDITED Code
 			// String[] items = new String[] { "Item 1", "Item 2", "Item 3" };
+
 			/*
 			 * Weather weather_data[] = new Weather[] { new
 			 * Weather(R.drawable.weather_cloudy, "Cloudy"), new

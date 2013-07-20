@@ -71,14 +71,18 @@ public class ReadJSON {
 						String defaultValue = getString(question, TAG_DEFAULT);
 						int minLength = getInt(question, TAG_MIN_LENGTH);
 						int maxLength = getInt(question, TAG_MAX_LENGTH);
-						// answerOptions.put(get, value)
-
-						JSONArray answerChoices = question
-								.getJSONArray(TAG_ANS_CHOICE);
-						for (int x = 0; x < answerChoices.length(); x++) {
-							answerChoicesMap.put(x, answerChoices.get(x)
-									.toString());
+					
+						try {
+							JSONArray answerChoices = question
+									.getJSONArray(TAG_ANS_CHOICE);
+							for (int x = 0; x < answerChoices.length(); x++) {
+								answerChoicesMap.put(x, answerChoices.get(x)
+										.toString());
+							}
+						} catch (JSONException e) {
+							e.printStackTrace();
 						}
+
 						// Creating question and answer object to store in
 						// Array list
 						Question simpleQuestionObj = new Question(questionId,
@@ -92,11 +96,14 @@ public class ReadJSON {
 					Branches simpleBranchesObj = new Branches(isExpandable,
 							questionList, answerList);
 					branchList.add(simpleBranchesObj);
+					questionList.clear();
+					answerList.clear();
 				}
 
 				Sections simpleSectionObj = new Sections(sectionId,
 						sectionName, branchList);
 				sectionList.add(simpleSectionObj);
+				branchList.clear();
 
 			}
 			setSurveyObject(new Survey(surveyName, sectionList));
