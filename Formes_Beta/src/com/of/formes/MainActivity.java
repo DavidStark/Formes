@@ -251,21 +251,24 @@ public class MainActivity extends Activity {
 			 * Weather(R.drawable.weather_sunny, "Sunny") };
 			 */
 			int sectionSelected = getArguments().getInt(ARG_SECTION_NUMBER);
-			Sections selectedSection = survey.sectionList
-					.get(sectionSelected);
+			Sections selectedSection = survey.sectionList.get(sectionSelected);
 			Branches selectedBranch = selectedSection.branchList.get(0);
-			int size= selectedBranch.getNoOfQuestions();
+			int size = selectedBranch.getNoOfQuestions();
 			RowLayoutUI rowLayout[] = new RowLayoutUI[size];
-			
-			for(int i=0;i<size;i++){
-				rowLayout[i]=new RowLayoutUI(selectedBranch.answerList.get(i), selectedBranch.questionList.get(i), selectedBranch.answerList.get(i).type);
+
+			for (int i = 0; i < size; i++) {
+				rowLayout[i] = new RowLayoutUI(
+						selectedBranch.answerList.get(i),
+						selectedBranch.questionList.get(i),
+						selectedBranch.answerList.get(i).type);
 			}
-			
-		/*	RowLayoutUI rowLayout[] = new RowLayoutUI[] {
-					new RowLayoutUI("a", "first question", "SmallFree"),
-					new RowLayoutUI("b", "second question", "SmallFree"),
-					new RowLayoutUI("b", "third question", "SmallFree") };
-*/
+
+			/*
+			 * RowLayoutUI rowLayout[] = new RowLayoutUI[] { new
+			 * RowLayoutUI("a", "first question", "SmallFree"), new
+			 * RowLayoutUI("b", "second question", "SmallFree"), new
+			 * RowLayoutUI("b", "third question", "SmallFree") };
+			 */
 			// ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 			// getActivity(), android.R.layout.simple_list_item_1, items);
 

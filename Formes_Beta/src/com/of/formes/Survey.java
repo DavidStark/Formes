@@ -1,7 +1,6 @@
 package com.of.formes;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Survey {
 	String surveyName;

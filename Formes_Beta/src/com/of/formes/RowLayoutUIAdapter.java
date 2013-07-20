@@ -1,9 +1,5 @@
 package com.of.formes;
 
-import java.util.List;
-
-import com.example.android.navigationdrawerexample.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +10,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.android.navigationdrawerexample.R;
 
 public class RowLayoutUIAdapter extends ArrayAdapter<RowLayoutUI> {
 
@@ -61,17 +59,56 @@ public class RowLayoutUIAdapter extends ArrayAdapter<RowLayoutUI> {
 		}
 
 		RowLayoutUI layoutUI = data[position];
-		holder.questionTxt.setText(layoutUI.questionText);
-//		Weather weather = data[position];
-//		holder.txtTitle.setText(weather.title);
-//		holder.imgIcon.setImageResource(weather.icon);
+		holder.questionTxt.setText(layoutUI.question.text);
+
+		/*
+		 * Check answer type
+		 */
+		AnswerType answerType = layoutUI.answer.type;
+		switch (answerType) {
+		case SmallFree:
+			// Hide other answer input views
+			holder.answerSpinner.setVisibility(View.GONE);
+			holder.answerDatePckr.setVisibility(View.GONE);
+
+			break;
+		case LargeFree:
+			// Hide other answer input views
+			holder.answerSpinner.setVisibility(View.GONE);
+			holder.answerDatePckr.setVisibility(View.GONE);
+
+			break;
+		case Date:
+			// Hide other answer input views
+			holder.answerSpinner.setVisibility(View.GONE);
+			holder.answerTxt.setVisibility(View.GONE);
+
+			break;
+		case Dropdown:
+			// Hide other answer input views
+			holder.answerTxt.setVisibility(View.GONE);
+			holder.answerDatePckr.setVisibility(View.GONE);
+
+			ArrayAdapter<String> adp1 = new ArrayAdapter<String>(getContext(),
+					android.R.layout.simple_spinner_item,
+					layoutUI.answer.getChoicesArrar());
+			adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+			holder.answerSpinner.setAdapter(adp1);
+			break;
+		case Tickbox:
+			break;
+
+		}
+		// Weather weather = data[position];
+		// holder.txtTitle.setText(weather.title);
+		// holder.imgIcon.setImageResource(weather.icon);
 
 		return row;
-		
+
 	}
 
 	static class RowHolder {
-		
+
 		TextView questionTxt;
 		Spinner answerSpinner;
 		EditText answerTxt;

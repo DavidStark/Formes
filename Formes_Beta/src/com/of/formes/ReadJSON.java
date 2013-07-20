@@ -1,6 +1,5 @@
 package com.of.formes;
 
-import java.io.FileReader;
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -8,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
+import android.util.SparseArray;
 
 public class ReadJSON {
 
@@ -27,6 +26,7 @@ public class ReadJSON {
 	private static final String TAG_DEFAULT = "default";
 	private static final String TAG_MIN_LENGTH = "minLength";
 	private static final String TAG_MAX_LENGTH = "maxLength";
+	private static final String TAG_ANS_CHOICE = "choices";
 	private Survey surveyObject = null;
 
 	public ReadJSON(InputStream is) {
@@ -61,6 +61,7 @@ public class ReadJSON {
 					Boolean isExpandable = getBoolean(branch, TAG_EXPANDABLE);
 
 					JSONArray questions = branch.getJSONArray(TAG_QUESTIONS);
+					SparseArray<String> answerChoicesMap = new SparseArray<String>();
 					for (int k = 0; k < questions.length(); k++) {
 						JSONObject question = questions.getJSONObject(k);
 						int questionId = getInt(question, TAG_Q_ID);
@@ -70,14 +71,21 @@ public class ReadJSON {
 						String defaultValue = getString(question, TAG_DEFAULT);
 						int minLength = getInt(question, TAG_MIN_LENGTH);
 						int maxLength = getInt(question, TAG_MAX_LENGTH);
+						// answerOptions.put(get, value)
 
+						JSONArray answerChoices = question
+								.getJSONArray(TAG_ANS_CHOICE);
+						for (int x = 0; x < answerChoices.length(); x++) {
+							answerChoicesMap.put(x, answerChoices.get(x)
+									.toString());
+						}
 						// Creating question and answer object to store in
 						// Array list
 						Question simpleQuestionObj = new Question(questionId,
 								questionText);
 						Answer simpleAnswerObj = new Answer(minLength,
 								maxLength, answerType, defaultValue, readOnly,
-								questionId);
+								questionId, answerChoicesMap);
 						questionList.add(simpleQuestionObj);
 						answerList.add(simpleAnswerObj);
 					}
