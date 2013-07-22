@@ -24,9 +24,12 @@ public class Answer {
 	}
 
 	public String[] getChoicesArrar() {
-		String[] ansChoiceArray = new String[2];
+		String[] ansChoiceArray = new String[answerChoices.size()];
 		for (int i = 0; i < answerChoices.size(); i++) {
-			ansChoiceArray[i] = answerChoices.get(i);
+			// String value = answerChoices.valueAt(i);
+			// ansChoiceArray[i] = (String)
+			// value.subSequence(value.indexOf(":")+2,value.lastIndexOf('"'));
+			ansChoiceArray[i] = answerChoices.valueAt(i);
 		}
 		return ansChoiceArray;
 	}

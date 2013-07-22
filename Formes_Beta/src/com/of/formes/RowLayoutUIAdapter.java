@@ -88,7 +88,11 @@ public class RowLayoutUIAdapter extends ArrayAdapter<RowLayoutUI> {
 			// Hide other answer input views
 			holder.answerTxt.setVisibility(View.GONE);
 			holder.answerDatePckr.setVisibility(View.GONE);
-
+			holder.answerSpinner.setVisibility(View.VISIBLE);
+//
+//			ArrayAdapter<CharSequence> adp1 = ArrayAdapter.createFromResource(
+//					getContext(), R.array.planets_array,
+//					android.R.layout.simple_spinner_item);
 			ArrayAdapter<String> adp1 = new ArrayAdapter<String>(getContext(),
 					android.R.layout.simple_spinner_item,
 					layoutUI.answer.getChoicesArrar());
@@ -96,6 +100,10 @@ public class RowLayoutUIAdapter extends ArrayAdapter<RowLayoutUI> {
 			holder.answerSpinner.setAdapter(adp1);
 			break;
 		case Tickbox:
+			// Hide other answer input views
+			holder.answerTxt.setVisibility(View.GONE);
+			holder.answerDatePckr.setVisibility(View.GONE);
+			holder.answerSpinner.setVisibility(View.GONE);
 			break;
 
 		}

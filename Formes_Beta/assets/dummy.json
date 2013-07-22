@@ -120,12 +120,12 @@
                             "id": 13,
                             "text": "PMC SRA Zone:",
                             "type": "Dropdown",
-                            "choices": {
-                                "01": "A",
-                                "02": "B",
-                                "03": "C",
-                                "04": "D"
-                            }
+                            "choices":[ 
+                            	{"1": "A"},
+                                {"2": "B"},
+                                {"3": "C"},
+                                {"4": "D"}
+                                ]
                         },
                         {
                             "id": 14,
@@ -151,11 +151,11 @@
                             "id": 18,
                             "text": "Legal Status:",
                             "type": "Dropdown",
-                            "choices": {
-                                "01": "Undeclared",
-                                "02": "Partly Declared",
-                                "03": "Declared"
-                            }
+                            "choices": [
+                                {"1": "Undeclared"},
+                                {"2": "Partly Declared"},
+                                {"3": "Declared"}
+                            ]
                         },
                         {
                             "id": 19,
@@ -166,41 +166,41 @@
                             "id": 20,
                             "text": "Land Owner:",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Private",
-                                "02": "Central Government",
-                                "03": "State Government",
-                                "04": "Local Government(PMC)"
-                            }
+                            "choices": [
+                               { "1": "Private"},
+                               { "2": "Central Government"},
+                               { "3": "State Government"},
+                               { "4": "Local Government(PMC)"}
+                            ]
                         },
                         {
                             "id": 21,
                             "text": "Development Plan Reservations:",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Road Widening",
-                                "02": "Open Space/Garden/Green Belt/BDP",
-                                "03": "School",
-                                "04": "Hospital",
-                                "05": "Library",
-                                "06": "Economically Weaker Section",
-                                "07": "No reservation"
-                            }
+                            "choices": [
+                               { "1": "Road Widening" },
+                               { "2": "Open Space/Garden/Green Belt/BDP" },
+                               { "3": "School" },
+                               { "4": "Hospital" },
+                               { "5": "Library" },
+                               { "6": "Economically Weaker Section" },
+                               { "7": "No reservation" }
+                            ]
                         },
                         {
                             "id": 22,
                             "text": "Development Plan Land Use:",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Residential",
-                                "02": "Commercial",
-                                "03": "Industrial",
-                                "04": "Public- Semi Public",
-                                "05": "Public Utility",
-                                "06": "Recreational/Open Space",
-                                "07": "Agricultural",
-                                "08": "River/Water body"
-                            }
+                            "choices": [
+                               { "1": "Residential" },
+                               { "2": "Commercial"},
+                               { "3": "Industrial" },
+                               { "4": "Public- Semi Public" },
+                               { "5": "Public Utility" },
+                               { "6": "Recreational/Open Space" },
+                               { "7": "Agricultural" },
+                               { "8": "River/Water body"}
+                            ]
                         },
                         {
                             "id": 23,
@@ -211,37 +211,37 @@
                             "id": 24,
                             "text": "Approxomate number of huts in the settlement",
                             "type": "Dropdown",
-                            "choices": {
-                                "01": "Less than 150",
-                                "02": "150-300",
-                                "03": "300-500",
-                                "04": "500-1000",
-                                "05": "1000+"
-                            }
+                            "choices": [
+                                {"1": "Less than 150"},
+                                {"2": "150-300"},
+                                {"3": "300-500"},
+                                {"4": "500-1000"},
+                                {"5": "1000+" }
+                            ]
                         },
                         {
                             "id": 25,
                             "text": "Location",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Water body/river bed/canal",
-                                "02": "Hill slope",
-                                "03": "Main road",
-                                "04": "Railway line",
-                                "05": "Within 1kn of an airport",
-                                "06": "Isolated"
-                            }
+                            "choices": [
+                               { "1": "Water body/river bed/canal"},
+                               { "2": "Hill slope"},
+                               { "3": "Main road"},
+                               { "4": "Railway line"},
+                               { "5": "Within 1kn of an airport"},
+                               { "6": "Isolated"}
+                            ]
                         },
                         {
                             "id": 26,
                             "text": "Topography",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Acute",
-                                "02": "Reasonable",
-                                "03": "Slight",
-                                "04": "Flat"
-                            }
+                            "choices": [
+                               { "1": "Acute"},
+                               { "2": "Reasonable"},
+                               { "3": "Slight"},
+                               { "4": "Flat"}
+                            ]
                         }
                     ]
                 }
@@ -268,13 +268,13 @@
                             "id": 3,
                             "text": "Strategy in addition to community toilet blocks",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Not applicable",
-                                "02": "Open Defecation",
-                                "03": "Public toilets outside of the settlement",
-                                "04": "Group Toilet",
-                                "05": "Individual Toilet"
-                            }
+                            "choices": [
+                               { "1": "Not applicable"},
+                               { "2": "Open Defecation"},
+                               { "3": "Public toilets outside of the settlement"},
+                               { "4": "Group Toilet"},
+                               { "5": "Individual Toilet"}
+                            ]
                         }
                     ]
                 },
@@ -300,11 +300,11 @@
                             "id": 7,
                             "text": "Toilet blocks gender usage",
                             "type": "Dropdown",
-                            "choices": {
-                                "01": "Male",
-                                "02": "Female",
-                                "03": "Mixed"
-                            }
+                            "choices": [
+                               { "1": "Male" },
+                               { "2": "Female"},
+                               { "3": "Mixed"}
+                            ]
                         },
                         {
                             "id": 8,
@@ -320,16 +320,16 @@
                             "id": 10,
                             "text": "The reason for the men not using the seats",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Not Applicable",
-                                "02": "Choked",
-                                "03": "Broken Pan",
-                                "04": "Broken Door",
-                                "05": "No Water",
-                                "06": "No electricity",
-                                "07": "Poor up-keep",
-                                "08": "Construction"
-                            }
+                            "choices": [
+                               { "1": "Not Applicable"},
+                               { "2": "Choked"},
+                               { "3": "Broken Pan"},
+                               { "4": "Broken Door"},
+                               { "5": "No Water"},
+                               { "6": "No electricity"},
+                               { "7": "Poor up-keep"},
+                               { "8": "Construction"}
+                            ]
                         },
                         {
                             "id": 11,
@@ -345,16 +345,16 @@
                             "id": 13,
                             "text": "The reason for the women not using the seats",
                             "type": "Tickbox",
-                            "choices": {
-                                "01": "Not Applicable",
-                                "02": "Choked",
-                                "03": "Broken Pan",
-                                "04": "Broken Door",
-                                "05": "No Water",
-                                "06": "No electricity",
-                                "07": "Poor up-keep",
-                                "08": "Construction"
-                            }
+                            "choices": [
+                              {  "1": "Not Applicable"},
+                              {  "2": "Choked"},
+                              { "3": "Broken Pan"},
+                              {  "4": "Broken Door"},
+                              {  "5": "No Water"},
+                              {  "6": "No electricity"},
+                              {  "7": "Poor up-keep"},
+                              {  "8": "Construction"}
+                            ]
                         }
                     ]
                 }

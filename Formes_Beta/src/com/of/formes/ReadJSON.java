@@ -71,13 +71,14 @@ public class ReadJSON {
 						String defaultValue = getString(question, TAG_DEFAULT);
 						int minLength = getInt(question, TAG_MIN_LENGTH);
 						int maxLength = getInt(question, TAG_MAX_LENGTH);
-					
+
 						try {
 							JSONArray answerChoices = question
 									.getJSONArray(TAG_ANS_CHOICE);
 							for (int x = 0; x < answerChoices.length(); x++) {
-								answerChoicesMap.put(x, answerChoices.get(x)
-										.toString());
+								answerChoicesMap.put(x,
+										answerChoices.getJSONObject(x)
+												.getString(String.valueOf(x)));
 							}
 						} catch (JSONException e) {
 							e.printStackTrace();
